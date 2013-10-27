@@ -83,7 +83,7 @@ class PsteMe {
      * @param string $mode Syntax highlighting type. use Language::YourLanguage.
      * @return Paste Information about the new paste you've created!
      */
-    public function create($paste, $name="New Paste", $access=1, $expires="+1 month", $mode="text/plain"){
+    public function create($paste, $name="New Paste", $access=Privacy::_PUBLIC, $expires="+1 month", $mode=Language::Plain){
         /*$expires = date('r', strtotime($expires));*/
 
         return new Paste($this->json_post('/api/v1/paste/', array(
